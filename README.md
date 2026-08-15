@@ -1,4 +1,4 @@
-# Anoop K.V. — Personal Portfolio
+# Anoop — Personal Portfolio
 
 A personal developer portfolio built from scratch with plain HTML, CSS and JavaScript — no frameworks, no build tools.
 
