@@ -1,95 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Anoop — Computer Science Engineering student and frontend developer portfolio.">
-<title>Anoop | Developer Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anoop — Computer Science Engineering student and frontend developer portfolio.">
+  <title>Anoop | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="loader"><div class="loader-logo">ANOOP<span>.</span></div><div class="loader-num">0%</div><div class="loader-track"><i></i></div></div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="ld-left">
+    <div class="ld-tag">PORTFOLIO</div>
+    <div class="ld-name">
+      <span class="ld-n1">ANOOP</span>
+    </div>
+    <div class="ld-role">Frontend Developer</div>
+  </div>
+  <div class="ld-right">
+    <div class="ld-counter" id="ldCounter">00</div>
+    <div class="ld-line"><div class="ld-line-fill"></div></div>
+    <div class="ld-foot">Loading portfolio<span class="ld-dots"></span></div>
+  </div>
+  <div class="ld-divider"></div>
+</div>
+
+<!-- Custom cursor -->
 <div class="cursor"><span class="dot"></span><span class="trail"></span><b>VIEW</b></div>
+
+<!-- Scroll progress -->
 <div class="top-progress"></div>
 
+<!-- ── HEADER ─────────────────────────────────────────────── -->
 <header>
-  <a class="brand" href="#home">A<span>.</span>K</a>
-  <nav>
-    <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
-  </nav>
-  <a class="resume-btn" href="assets/Anoop_Resume.pdf" download>Resume <span>↗</span></a>
-  <button class="menu" aria-label="Open menu"><i></i><i></i></button>
+  <div class="header-inner">
+    <a class="brand" href="#home">Anoop<span>.</span></a>
+
+    <nav id="main-nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+        <span class="theme-toggle-icon" id="themeIcon"></span>
+        <!-- moon icon (dark mode) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- sun icon (light mode) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a class="resume-btn" href="assets/Anoop_Resume.pdf" download>Resume <span>↗</span></a>
+      <button class="menu" id="menuBtn" aria-label="Open menu">
+        <i></i><i></i>
+      </button>
+    </div>
+  </div>
 </header>
 
 <main>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
 <section class="hero" id="home">
   <div class="hero-grid">
+
+    <!-- Left copy -->
     <div class="hero-copy">
-      <div class="eyebrow reveal"><span></span> COMPUTER SCIENCE / FRONTEND DEVELOPER</div>
-      <h1><span>Building</span><span class="accent">clear.</span><span>useful.</span><span>digital experiences.</span></h1>
-      <p class="hero-text reveal">Hi, I’m <strong>Anoop</strong>. I’m a Computer Science Engineering student focused on frontend development, UI/UX and building practical products with clean, responsive interfaces.</p>
-      <div class="hero-buttons reveal"><a href="#projects" class="primary magnetic">View my work <span>↓</span></a><a href="#contact" class="secondary magnetic">Let’s connect <span>↗</span></a></div>
-      <div class="hero-meta reveal"><div><b>2025–2029</b><small>B.Tech CSE</small></div><div><b>Pune</b><small>India</small></div><div><b>Open</b><small>To opportunities</small></div></div>
+      <div class="eyebrow reveal">
+        COMPUTER SCIENCE / FRONTEND DEVELOPER
+      </div>
+      <h1>
+        <span>Building</span>
+        <span class="accent">digital.</span>
+        <span>experiences.</span>
+        <span>that matter.</span>
+      </h1>
+      <p class="hero-text reveal">
+        Hi, I'm <strong>Anoop</strong>. A Computer Science Engineering student
+        focused on frontend development, UI/UX and building practical products
+        with clean, responsive interfaces.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="#projects" class="primary magnetic">View my work <span>↓</span></a>
+        <a href="#contact" class="secondary magnetic">Let's connect <span>↗</span></a>
+      </div>
+      <div class="hero-meta reveal">
+        <div><b>2025–2029</b><small>B.Tech CSE</small></div>
+        <div><b>Pune</b><small>India</small></div>
+        <div><b>Open</b><small>To opportunities</small></div>
+      </div>
     </div>
+
+    <!-- Right photo -->
     <div class="hero-photo reveal">
-      <div class="photo-frame"><img src="assets/profile.jpeg" alt="Anoop profile photo"><div class="photo-shine"></div><div class="photo-tag">PROFILE / 01</div></div>
-      <div class="orbit-text">DESIGN • CODE • BUILD • REPEAT •</div>
-      <div class="floating-card"><span>Currently learning</span><strong>JavaScript + DSA</strong><i>↗</i></div>
+      <img src="assets/profile.png" alt="Anoop — Computer Science Engineering student" class="profile-img">
     </div>
+
   </div>
   <div class="scroll-hint"><span></span> Scroll to explore</div>
 </section>
 
+<!-- ── STATS ──────────────────────────────────────────────── -->
 <section class="stats">
-  <div><strong>02</strong><span>Featured projects</span></div><div><strong>01</strong><span>Internship experience</span></div><div><strong>✦</strong><span>Hackathon finalist</span></div><div><strong>∞</strong><span>Always learning</span></div>
+  <div><strong>03</strong><span>Featured projects</span></div>
+  <div><strong>01</strong><span>Internship experience</span></div>
+  <div><strong>✦</strong><span>Hackathon finalist</span></div>
+  <div><strong>∞</strong><span>Always learning</span></div>
 </section>
 
+<!-- ── ABOUT ──────────────────────────────────────────────── -->
 <section class="section" id="about">
-  <div class="section-head reveal"><span>01</span><div><small>ABOUT ME</small><h2>Simple ideas.<br><em>Strong execution.</em></h2></div></div>
+  <div class="section-head reveal">
+    <span>01</span>
+    <div>
+      <small>ABOUT ME</small>
+      <h2>Simple ideas.<br><em>Strong execution.</em></h2>
+    </div>
+  </div>
   <div class="about-grid">
-    <div class="about-lead reveal"><p>I like turning concepts into interfaces that feel <strong>clear, fast and intentional.</strong></p></div>
-    <div class="about-content reveal"><p>My development journey combines programming fundamentals with frontend development and UI/UX design. I learn by building projects, solving DSA problems and experimenting with better ways to structure digital experiences.</p><p>I’m currently pursuing a B.Tech in Computer Science Engineering and continuously expanding my skills across JavaScript, Java, C++, databases and modern web development.</p><div class="facts"><div><small>EDUCATION</small><b>B.Tech CSE</b><span>Physics Wallah Institute of Innovation</span></div><div><small>UNIVERSITY</small><b>Medhavi Skills University</b><span>2025 — 2029</span></div><div><small>LOCATION</small><b>Pune, Maharashtra</b><span>India</span></div><div><small>LANGUAGES</small><b>English · Hindi</b><span>Fluent</span></div></div></div>
+    <div class="about-lead reveal">
+      <p>I build things for the web — and care deeply about <strong>how they look, feel and work.</strong></p>
+    </div>
+    <div class="about-content reveal">
+      <p>I'm Anoop , a Computer Science Engineering student from Pune with a genuine interest
+         in frontend development and UI/UX. I got into coding because I liked seeing ideas turn
+         into something real on a screen — and that's still what drives me.</p>
+      <p>I've worked as a web developer intern at KP Smart IT Solutions, built projects like a
+         Care Queue Management System and a Travel Planner, and reached the finalist round of a
+         hackathon. Outside of work I'm sharpening my DSA skills, exploring React and learning
+         how to write cleaner, more maintainable code every day.</p>
+      <div class="facts">
+        <div><small>EDUCATION</small><b>B.Tech CSE</b><span>Physics Wallah Institute of Innovation</span></div>
+        <div><small>UNIVERSITY</small><b>Medhavi Skills University</b><span>2025 — 2029</span></div>
+        <div><small>LOCATION</small><b>Pune, Maharashtra</b><span>India</span></div>
+        <div><small>LANGUAGES</small><b>English · Hindi</b><span>Fluent</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ── PROJECTS ───────────────────────────────────────────── -->
 <section class="projects section" id="projects">
-  <div class="section-head reveal"><span>02</span><div><small>SELECTED PROJECTS</small><h2>Things I’ve<br><em>built.</em></h2></div></div>
+  <div class="section-head reveal">
+    <span>02</span>
+    <div>
+      <small>SELECTED PROJECTS</small>
+      <h2>Things I've<br><em>built.</em></h2>
+    </div>
+  </div>
   <div class="project-list">
+
+    <!-- 01 — Task Tracker -->
     <article class="project reveal">
-      <div class="project-number">01</div><div class="project-copy"><div class="tags"><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span></div><h3>Care Queue<br><em>Management</em></h3><p>A responsive queue-management interface designed to make status tracking simple and easy to understand.</p><a href="#" onclick="return false">Project concept <b>↗</b></a></div>
-      <div class="project-visual queue"><div class="window"><div class="window-bar"><i></i><i></i><i></i><span>CARE QUEUE</span></div><div class="queue-screen"><small>NOW SERVING</small><strong>024</strong><div class="bar"><i></i></div><div class="qrow"><span>Window 01</span><b>024</b></div><div class="qrow"><span>Window 02</span><b>025</b></div><div class="qrow"><span>Window 03</span><b>026</b></div></div></div></div>
+      <div class="project-number">01</div>
+      <div class="project-copy">
+        <div class="tags"><span>NEXT.JS 16</span><span>REACT 19</span><span>TYPESCRIPT</span><span>CSS</span></div>
+        <h3>Task<br><em>Tracker</em></h3>
+        <p>A production-style task management app with a dashboard, real-time search, priority sorting, due-date tracking with overdue detection, toast notifications and full localStorage persistence — built without any UI library.</p>
+        <div class="project-links">
+          <a href="https://task-tracker-flax-phi.vercel.app/" target="_blank" rel="noopener">Live demo <b>↗</b></a>
+          <a href="https://github.com/anoopkv114-ops/task-tracker" target="_blank" rel="noopener">GitHub <b>↗</b></a>
+        </div>
+      </div>
+      <div class="project-visual task-visual">
+        <div class="tv-header">
+          <div class="tv-dots"><i></i><i></i><i></i></div>
+          <span>TASK TRACKER</span>
+        </div>
+        <div class="tv-body">
+          <div class="tv-stats">
+            <div class="tv-stat"><strong class="tv-num" data-target="12">0</strong><small>Total</small></div>
+            <div class="tv-stat tv-stat--green"><strong class="tv-num" data-target="7">0</strong><small>Done</small></div>
+            <div class="tv-stat tv-stat--amber"><strong class="tv-num" data-target="5">0</strong><small>Pending</small></div>
+            <div class="tv-stat tv-stat--red"><strong class="tv-num" data-target="3">0</strong><small>High</small></div>
+          </div>
+          <div class="tv-tasks">
+            <div class="tv-task tv-task--done"><span class="tv-check">✓</span><span class="tv-title">Design landing page UI</span><span class="tv-badge tv-badge--low">Low</span></div>
+            <div class="tv-task tv-task--pending"><span class="tv-check tv-check--pending"></span><span class="tv-title">Fix auth token refresh</span><span class="tv-badge tv-badge--high">High</span></div>
+            <div class="tv-task tv-task--overdue"><span class="tv-check tv-check--pending"></span><span class="tv-title">Write API docs</span><span class="tv-badge tv-badge--med">Medium</span></div>
+            <div class="tv-task tv-task--pending tv-task--new"><span class="tv-check tv-check--pending"></span><span class="tv-title">Deploy to production</span><span class="tv-badge tv-badge--high">High</span></div>
+          </div>
+        </div>
+      </div>
     </article>
+
+    <!-- 02 — CareQueue -->
     <article class="project reveal">
-      <div class="project-number">02</div><div class="project-copy"><div class="tags"><span>JAVASCRIPT</span><span>MAP UI</span><span>RESPONSIVE</span></div><h3>Travel<br><em>Planner</em></h3><p>An interactive trip-planning experience with destination information, itinerary planning and map-friendly interactions.</p><a href="#" onclick="return false">Project concept <b>↗</b></a></div>
-      <div class="project-visual travel"><div class="map-grid"></div><div class="route r1"></div><div class="route r2"></div><i class="pin p1"></i><i class="pin p2"></i><i class="pin p3"></i><div class="trip"><small>NEXT ADVENTURE</small><b>PLAN / EXPLORE / GO</b><span>Interactive trip planner</span></div></div>
+      <div class="project-number">02</div>
+      <div class="project-copy">
+        <div class="tags"><span>NODE.JS</span><span>EXPRESS</span><span>SQLITE</span><span>JWT</span></div>
+        <h3>Care<br><em>Queue</em></h3>
+        <p>An intelligent OPD queue-management system for Indian hospitals — patients describe symptoms, get a triage recommendation and an OPD token, then track their position in real time. Built with a full REST API, role-based auth (JWT + bcrypt) and a versioned SQLite schema.</p>
+        <div class="project-links">
+          <a href="https://github.com/anoopkv114-ops/CareQueue" target="_blank" rel="noopener">GitHub <b>↗</b></a>
+        </div>
+      </div>
+      <div class="project-visual cq-visual">
+        <!-- header bar -->
+        <div class="cq-header">
+          <div class="cq-dots"><i></i><i></i><i></i></div>
+          <span>CARE QUEUE — OPD SYSTEM</span>
+          <span class="cq-live"><i></i>LIVE</span>
+        </div>
+        <div class="cq-body">
+          <!-- left: now serving panel -->
+          <div class="cq-serving">
+            <small class="cq-label">NOW SERVING</small>
+            <div class="cq-token">
+              <span class="cq-token-num">024</span>
+              <span class="cq-dept">General OPD</span>
+            </div>
+            <div class="cq-progress-wrap">
+              <div class="cq-progress-bar"></div>
+            </div>
+            <div class="cq-windows">
+              <div class="cq-win cq-win--active"><span>W-01</span><b>024</b><span class="cq-status cq-status--in">In</span></div>
+              <div class="cq-win"><span>W-02</span><b>025</b><span class="cq-status cq-status--wait">Wait</span></div>
+              <div class="cq-win"><span>W-03</span><b>026</b><span class="cq-status cq-status--wait">Wait</span></div>
+            </div>
+          </div>
+          <!-- right: patient queue list -->
+          <div class="cq-queue">
+            <small class="cq-label">QUEUE</small>
+            <div class="cq-patient cq-patient--current">
+              <div class="cq-avatar cq-avatar--purple">AK</div>
+              <div class="cq-info"><span>Token 024</span><small>High priority</small></div>
+              <span class="cq-badge cq-badge--high">HIGH</span>
+            </div>
+            <div class="cq-patient">
+              <div class="cq-avatar">RS</div>
+              <div class="cq-info"><span>Token 025</span><small>General checkup</small></div>
+              <span class="cq-badge cq-badge--med">MED</span>
+            </div>
+            <div class="cq-patient">
+              <div class="cq-avatar">PK</div>
+              <div class="cq-info"><span>Token 026</span><small>Follow-up</small></div>
+              <span class="cq-badge cq-badge--low">LOW</span>
+            </div>
+            <div class="cq-patient cq-patient--new">
+              <div class="cq-avatar">MV</div>
+              <div class="cq-info"><span>Token 027</span><small>Triage pending</small></div>
+              <span class="cq-badge cq-badge--new">NEW</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
+
+    <!-- 03 — Travel Planner -->
+    <article class="project reveal">
+      <div class="project-number">03</div>
+      <div class="project-copy">
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>MAPS API</span></div>
+        <h3>Travel<br><em>Planner</em></h3>
+        <p>A single-platform web app that replaces juggling multiple tabs — search destinations, view weather and location data, explore interactive maps and plan trips, all in one place. Built as a collaborative frontend project.</p>
+        <div class="project-links">
+          <a href="https://github.com/anoopkv114-ops/Travel-Planner" target="_blank" rel="noopener">GitHub <b>↗</b></a>
+        </div>
+      </div>
+      <div class="project-visual travel">
+        <!-- map background -->
+        <div class="tp-map">
+          <div class="tp-map-grid"></div>
+          <!-- Animated route path SVG -->
+          <svg class="tp-route-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#7c6fff"/>
+                <stop offset="100%" stop-color="#4ef0e4"/>
+              </linearGradient>
+            </defs>
+            <path class="tp-path" d="M 60 220 Q 130 140 190 160 Q 250 180 290 100 Q 320 50 360 80"/>
+          </svg>
+          <!-- Location pins -->
+          <div class="tp-pin tp-pin-1">
+            <div class="tp-pin-dot"></div>
+            <div class="tp-pin-ring"></div>
+            <div class="tp-pin-label">Mumbai</div>
+          </div>
+          <div class="tp-pin tp-pin-2">
+            <div class="tp-pin-dot"></div>
+            <div class="tp-pin-ring"></div>
+            <div class="tp-pin-label">Goa</div>
+          </div>
+          <div class="tp-pin tp-pin-3">
+            <div class="tp-pin-dot"></div>
+            <div class="tp-pin-ring"></div>
+            <div class="tp-pin-label">Manali</div>
+          </div>
+        </div>
+        <!-- UI overlay -->
+        <div class="tp-ui">
+          <!-- search bar -->
+          <div class="tp-search">
+            <span class="tp-search-icon">⌕</span>
+            <span class="tp-search-text">Search destinations<span class="tp-cursor">|</span></span>
+          </div>
+          <!-- destination cards strip -->
+          <div class="tp-cards">
+            <div class="tp-card tp-card--active">
+              <div class="tp-card-top">
+                <span class="tp-card-name">Goa</span>
+                <span class="tp-card-weather">🌤 28°</span>
+              </div>
+              <div class="tp-card-row"><span>2 days</span><span class="tp-card-tag">Beach</span></div>
+            </div>
+            <div class="tp-card">
+              <div class="tp-card-top">
+                <span class="tp-card-name">Manali</span>
+                <span class="tp-card-weather">❄️ 4°</span>
+              </div>
+              <div class="tp-card-row"><span>4 days</span><span class="tp-card-tag">Hills</span></div>
+            </div>
+            <div class="tp-card">
+              <div class="tp-card-top">
+                <span class="tp-card-name">Jaipur</span>
+                <span class="tp-card-weather">☀️ 34°</span>
+              </div>
+              <div class="tp-card-row"><span>3 days</span><span class="tp-card-tag">Heritage</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
+<!-- ── SKILLS ─────────────────────────────────────────────── -->
 <section class="section skills" id="skills">
-  <div class="section-head reveal"><span>03</span><div><small>TECHNICAL TOOLKIT</small><h2>Tools I use<br><em>to build.</em></h2></div></div>
+  <div class="section-head reveal">
+    <span>03</span>
+    <div>
+      <small>TECHNICAL TOOLKIT</small>
+      <h2>Tools I use<br><em>to build.</em></h2>
+    </div>
+  </div>
   <div class="skills-grid reveal">
-    <div class="skill-card"><div class="skill-icon">01</div><h3>Frontend</h3><p>Building responsive interfaces with clean structure, visual hierarchy and smooth interactions.</p><div class="skill-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>UI/UX</span></div></div>
-    <div class="skill-card"><div class="skill-icon">02</div><h3>Programming</h3><p>Developing problem-solving fundamentals through programming and DSA practice.</p><div class="skill-list"><span>C</span><span>C++</span><span>Java</span><span>DSA</span><span>OOP</span></div></div>
-    <div class="skill-card"><div class="skill-icon">03</div><h3>Database</h3><p>Working with relational data, SQL queries and database fundamentals.</p><div class="skill-list"><span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>DBMS</span></div></div>
-    <div class="skill-card"><div class="skill-icon">04</div><h3>Tools</h3><p>Using modern development and design tools to build, test and ship projects.</p><div class="skill-list"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Figma</span></div></div>
+    <div class="skill-card">
+      <div class="skill-icon">01</div>
+      <h3>Frontend</h3>
+      <p>Building responsive interfaces with clean structure, visual hierarchy and smooth interactions.</p>
+      <div class="skill-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>UI/UX</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">02</div>
+      <h3>Programming</h3>
+      <p>Developing problem-solving fundamentals through programming and DSA practice.</p>
+      <div class="skill-list"><span>C</span><span>C++</span><span>Java</span><span>DSA</span><span>OOP</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">03</div>
+      <h3>Database</h3>
+      <p>Working with relational data, SQL queries and database fundamentals.</p>
+      <div class="skill-list"><span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>DBMS</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">04</div>
+      <h3>Tools &amp; Design</h3>
+      <p>Using modern development and design tools to build, test and ship projects.</p>
+      <div class="skill-list"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Figma</span></div>
+    </div>
   </div>
 </section>
 
+<!-- ── EXPERIENCE ─────────────────────────────────────────── -->
 <section class="experience section" id="experience">
-  <div class="section-head reveal"><span>04</span><div><small>EXPERIENCE</small><h2>Learning through<br><em>real work.</em></h2></div></div>
-  <div class="experience-card reveal"><div class="exp-date">MAY — JUN<br>2026</div><div><span>WEB DEVELOPER INTERN</span><h3>KP Smart IT Solutions</h3><ul><li>Developed responsive and interactive web pages using HTML, CSS and JavaScript.</li><li>Designed user-friendly UI/UX layouts focused on usability and aesthetics.</li><li>Worked on hands-on projects as part of academic and self-learning initiatives.</li></ul></div><b class="exp-index">01</b></div>
-  <div class="achievement reveal"><span>✦</span><div><small>ACHIEVEMENT</small><h3>Hackathon Finalist</h3><p>Secured a top finalist position while collaborating on real-world problems and developing innovative solutions.</p></div><b>↗</b></div>
+  <div class="section-head reveal">
+    <span>04</span>
+    <div>
+      <small>EXPERIENCE</small>
+      <h2>Learning through<br><em>real work.</em></h2>
+    </div>
+  </div>
+  <div class="experience-card reveal">
+    <div class="exp-date">MAY — JUN<br>2026</div>
+    <div>
+      <span>WEB DEVELOPER INTERN</span>
+      <h3>KP Smart IT Solutions</h3>
+      <ul>
+        <li>Developed responsive and interactive web pages using HTML, CSS and JavaScript.</li>
+        <li>Designed user-friendly UI/UX layouts focused on usability and aesthetics.</li>
+        <li>Worked on hands-on projects as part of academic and self-learning initiatives.</li>
+      </ul>
+    </div>
+    <b class="exp-index">01</b>
+  </div>
+  <div class="achievement reveal">
+    <span>✦</span>
+    <div>
+      <small>ACHIEVEMENT</small>
+      <h3>Hackathon Finalist</h3>
+      <p>Secured a top finalist position while collaborating on real-world problems and developing innovative frontend solutions under pressure.</p>
+    </div>
+    <b>↗</b>
+  </div>
+  <div class="achievement reveal">
+    <span>◈</span>
+    <div>
+      <small>RECOGNITION</small>
+      <h3>Coding &amp; Innovation Events</h3>
+      <p>Actively participated in multiple events, consistently recognised for technical and design contributions.</p>
+    </div>
+    <b>↗</b>
+  </div>
 </section>
 
+<!-- ── CONTACT ────────────────────────────────────────────── -->
 <section class="contact section" id="contact">
-  <div class="contact-box reveal"><div class="contact-label"><span>05 / CONTACT</span><span>LET’S BUILD SOMETHING</span></div><h2>Have an idea?<br><em>Let’s talk.</em></h2><p>Open to internships, collaborations and interesting projects.</p><a class="email magnetic" href="mailto:anoopkv.114@gmail.com">anoopkv.114@gmail.com <b>↗</b></a><div class="socials"><a href="https://linkedin.com/in/anoopkv01" target="_blank">LinkedIn ↗</a><a href="https://github.com/anoopkv114-ops" target="_blank">GitHub ↗</a><a href="tel:+918528429220">+91 8528429220</a></div></div>
+  <div class="contact-box reveal">
+    <div class="contact-label">
+      <span>05 / CONTACT</span>
+      <span>LET'S BUILD SOMETHING</span>
+    </div>
+    <h2>Have an idea?<br><em>Let's talk.</em></h2>
+    <p>Open to internships, collaborations and interesting projects.</p>
+    <a class="email magnetic" href="mailto:anoopkv.114@gmail.com">anoopkv.114@gmail.com <b>↗</b></a>
+    <div class="socials">
+      <a href="https://linkedin.com/in/anoopkv01" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/anoopkv114-ops" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="tel:+918528429220">+91 85284 29220</a>
+    </div>
+  </div>
 </section>
+
 </main>
-<footer><span>© <b id="year"></b> ANOOP</span><span>DESIGNED & BUILT WITH HTML / CSS / JS</span><a href="#home">BACK TO TOP ↑</a></footer>
+
+<footer>
+  <span>© <b id="year"></b> ANOOP</span>
+  <span>DESIGNED &amp; BUILT WITH HTML / CSS / JS</span>
+  <a href="#home">BACK TO TOP ↑</a>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
