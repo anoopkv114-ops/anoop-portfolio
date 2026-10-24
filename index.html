@@ -14,19 +14,59 @@
 
 <!-- Loader -->
 <div class="loader" id="loader">
-  <div class="ld-left">
-    <div class="ld-tag">PORTFOLIO</div>
-    <div class="ld-name">
-      <span class="ld-n1">ANOOP</span>
+  <!-- background grid -->
+  <div class="ld-grid"></div>
+
+  <!-- top-left tag -->
+  <div class="ld-corner">
+    <div class="ld-corner-dot"></div>
+    <span class="ld-corner-text">PORTFOLIO</span>
+  </div>
+
+  <!-- top-right index -->
+  <div class="ld-index">2026</div>
+
+  <!-- center -->
+  <div class="ld-center">
+    <!-- logo mark -->
+    <div class="ld-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 26 L13 6 L16 14 L19 6 L26 26" stroke="url(#ldLogoGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="ldLogoGrad" x1="6" y1="6" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#7c6fff"/>
+            <stop offset="100%" stop-color="#4ef0e4"/>
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
-    <div class="ld-role">Frontend Developer</div>
+
+    <!-- name -->
+    <div class="ld-name-wrap">
+      <span class="ld-name">AN<em>OOP</em></span>
+    </div>
+
+    <!-- role -->
+    <div class="ld-role">Frontend Developer &nbsp;·&nbsp; CSE Student</div>
+
+    <!-- progress -->
+    <div class="ld-track">
+      <div class="ld-bar-wrap">
+        <div class="ld-bar-fill" id="ldBarFill"></div>
+        <div class="ld-bar-glow" id="ldBarGlow"></div>
+      </div>
+      <div class="ld-bar-meta">
+        <span class="ld-status"><span class="ld-status-dot"></span><span id="ldStatus">Initialising</span></span>
+        <span class="ld-pct" id="ldPct">0%</span>
+      </div>
+    </div>
   </div>
-  <div class="ld-right">
-    <div class="ld-counter" id="ldCounter">00</div>
-    <div class="ld-line"><div class="ld-line-fill"></div></div>
-    <div class="ld-foot">Loading portfolio<span class="ld-dots"></span></div>
+
+  <!-- bottom bar -->
+  <div class="ld-bottom">
+    <span class="ld-bottom-l">PUNE · INDIA</span>
+    <span class="ld-bottom-r">DESIGNED &amp; BUILT BY ANOOP</span>
   </div>
-  <div class="ld-divider"></div>
 </div>
 
 <!-- Custom cursor -->
@@ -85,6 +125,7 @@
     <!-- Left copy -->
     <div class="hero-copy">
       <div class="eyebrow reveal">
+        <span class="dot-pulse"></span>
         COMPUTER SCIENCE / FRONTEND DEVELOPER
       </div>
       <h1>
@@ -351,7 +392,7 @@
     <span>03</span>
     <div>
       <small>TECHNICAL TOOLKIT</small>
-      <h2>Tools I use<br><em>to build.</em></h2>
+      <h2>Skills I use<br><em>to create.</em></h2>
     </div>
   </div>
   <div class="skills-grid reveal">
@@ -359,25 +400,25 @@
       <div class="skill-icon">01</div>
       <h3>Frontend</h3>
       <p>Building responsive interfaces with clean structure, visual hierarchy and smooth interactions.</p>
-      <div class="skill-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>UI/UX</span></div>
+      <div class="skill-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span></span>React.js</span><span>Next.js</span><span>Responsive Design</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">02</div>
-      <h3>Programming</h3>
-      <p>Developing problem-solving fundamentals through programming and DSA practice.</p>
-      <div class="skill-list"><span>C</span><span>C++</span><span>Java</span><span>DSA</span><span>OOP</span></div>
+      <h3>Design</h3>
+      <p>Crafting on-brand visuals and user-centred experiences with a strong eye for layout, typography and colour.</p>
+      <div class="skill-list"><span>UI/UX Design</span><span>Figma</span><span>Canva</span><span>Adobe Express</span><span>Layout</span><span>Typography</span><span>Colour Theory</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">03</div>
-      <h3>Database</h3>
-      <p>Working with relational data, SQL queries and database fundamentals.</p>
-      <div class="skill-list"><span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>DBMS</span></div>
+      <h3>Programming &amp; Database</h3>
+      <p>Developing problem-solving fundamentals through programming, DSA and relational data.</p>
+      <div class="skill-list"><span>C</span><span>C++</span><span>Java</span><span>DSA</span><span>OOP</span><span>SQL</span><span>MySQL</span><span>PostgreSQL</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon">04</div>
-      <h3>Tools &amp; Design</h3>
-      <p>Using modern development and design tools to build, test and ship projects.</p>
-      <div class="skill-list"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Figma</span></div>
+      <h3>Tools &amp; Other</h3>
+      <p>Using modern dev, design and productivity tools to build, ship and collaborate efficiently.</p>
+      <div class="skill-list"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Video Editing</span><span>Google Sheets</span><span>Tableau</span><span>Team Collaboration</span></div>
     </div>
   </div>
 </section>
@@ -397,12 +438,34 @@
       <span>WEB DEVELOPER INTERN</span>
       <h3>KP Smart IT Solutions</h3>
       <ul>
-        <li>Developed responsive and interactive web pages using HTML, CSS and JavaScript.</li>
-        <li>Designed user-friendly UI/UX layouts focused on usability and aesthetics.</li>
-        <li>Worked on hands-on projects as part of academic and self-learning initiatives.</li>
+        <li>Designed user-friendly UI/UX layouts focused on usability, clean visuals and consistent styling.</li>
+        <li>Built responsive, interactive web pages with HTML, CSS and JavaScript, delivering to deadlines.</li>
       </ul>
     </div>
     <b class="exp-index">01</b>
+  </div>
+  <div class="experience-card reveal">
+    <div class="exp-date">2025 —<br>PRESENT</div>
+    <div>
+      <span>VICE PRESIDENT</span>
+      <h3>Business Club, Institute of Innovation</h3>
+      <ul>
+        <li>Lead club activities and coordinate with members and faculty to deliver events on time.</li>
+        <li>Take feedback, follow up and keep work moving across the team.</li>
+      </ul>
+    </div>
+    <b class="exp-index">02</b>
+  </div>
+  <div class="experience-card reveal">
+    <div class="exp-date">2025 —<br>PRESENT</div>
+    <div>
+      <span>EVENT MANAGER</span>
+      <h3>Business Investor Dilemma</h3>
+      <ul>
+        <li>Managed participant coordination, scheduling and execution of a startup competition.</li>
+      </ul>
+    </div>
+    <b class="exp-index">03</b>
   </div>
   <div class="achievement reveal">
     <span>✦</span>

@@ -6,20 +6,42 @@
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 /* ── LOADER ───────────────────────────────────────────────── */
-const ldCounter = document.getElementById("ldCounter");
 const loader    = document.getElementById("loader");
+const ldBarFill = document.getElementById("ldBarFill");
+const ldBarGlow = document.getElementById("ldBarGlow");
+const ldPct     = document.getElementById("ldPct");
+const ldStatus  = document.getElementById("ldStatus");
+
+const statusSteps = [
+  { at: 0,   label: "Initialising" },
+  { at: 25,  label: "Loading assets" },
+  { at: 55,  label: "Building layout" },
+  { at: 80,  label: "Applying styles" },
+  { at: 95,  label: "Almost ready" },
+];
+
 let ldVal = 0;
 const ldTimer = setInterval(() => {
-  ldVal = Math.min(ldVal + Math.floor(Math.random() * 6) + 2, 100);
-  ldCounter.textContent = String(ldVal).padStart(2, "0");
+  ldVal = Math.min(ldVal + Math.floor(Math.random() * 5) + 2, 100);
+
+  // update bar
+  ldBarFill.style.width = ldVal + "%";
+  ldBarGlow.style.right = (100 - ldVal) + "%";
+  ldPct.textContent = ldVal + "%";
+
+  // update status label
+  const step = statusSteps.filter(s => s.at <= ldVal).pop();
+  if (step) ldStatus.textContent = step.label;
+
   if (ldVal >= 100) {
     clearInterval(ldTimer);
+    ldStatus.textContent = "Ready";
     setTimeout(() => {
       loader.classList.add("exit");
-      setTimeout(() => { loader.style.display = "none"; }, 650);
-    }, 300);
+      setTimeout(() => { loader.style.display = "none"; }, 720);
+    }, 350);
   }
-}, 40);
+}, 45);
 
 /* ── SCROLL PROGRESS ──────────────────────────────────────── */
 const progress = document.querySelector(".top-progress");
